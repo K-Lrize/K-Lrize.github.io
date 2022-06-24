@@ -23,12 +23,12 @@
 <meta property="og:site_name" content="Lrize、 Blogs">
 <meta property="og:description" content="Aria2 + Rclone 实现离线下载，可配置自动上传至OneDrive1. Aria2Aria2是一个轻量级的多协议和多源命令行下载实用程序。它支持HTTP&#x2F;HTTPS，FTP，SFTP，BitTorrent和Metalink。Aria2可以通过内置的JSON-RPC和XML-RPC接口进行操作。 1.1 Aria2安装 完美配置，使用如下代码下载并运行Aria2一键安装管理脚本，集成Ar">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cite.lrize.xyz/Lrize/Cite/Blog/Aria2+Rclone/Rclone_OneDrive_token.png">
+<meta property="og:image" content="https://cite.lrize.xyz/Blog/Aria2+Rclone/Rclone_OneDrive_token.png">
 <meta property="article:published_time" content="2022-03-12T16:29:54.000Z">
-<meta property="article:modified_time" content="2022-06-24T15:23:35.537Z">
+<meta property="article:modified_time" content="2022-06-24T15:27:26.007Z">
 <meta property="article:author" content="Lrize、">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cite.lrize.xyz/Lrize/Cite/Blog/Aria2+Rclone/Rclone_OneDrive_token.png">
+<meta name="twitter:image" content="https://cite.lrize.xyz/Blog/Aria2+Rclone/Rclone_OneDrive_token.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -287,7 +287,7 @@
 <h2 id="3-Rclone-连接-Onedrive"><a href="#3-Rclone-连接-Onedrive" class="headerlink" title="3. Rclone 连接 Onedrive"></a>3. Rclone 连接 Onedrive</h2><h3 id="3-1-获取Token"><a href="#3-1-获取Token" class="headerlink" title="3.1 获取Token"></a>3.1 获取Token</h3><p>在自己Windows电脑上下载Rclone，Rclone官网：<a target="_blank" rel="noopener" href="https://rclcite.org/downloads/">Rclone</a><br>解压到有环境变量的目录，例如<code>C:\Windows\system32\</code>也可自行配置环境变量，不会添加环境变量的百度……然后Win+R打开资源管理器输入cmd回车打开控制台，接着输入以下命令。</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">rclone</span> authorize <span class="hljs-string">&quot;onedrive&quot;</span><br></code></pre></td></tr></table></figure>
 <p>接下来会弹出浏览器，要求你登录你的Onedrive账号进行授权。授权完后浏览器提示</p>
-<p><img src="https://cite.lrize.xyz/Lrize/Cite/Blog/Aria2+Rclone/Rclone_OneDrive_token.png" srcset="/img/loading.gif" lazyload alt="image"></p>
+<p><img src="https://cite.lrize.xyz/Blog/Aria2+Rclone/Rclone_OneDrive_token.png" srcset="/img/loading.gif" lazyload alt="image"></p>
 <p>接下来命令提示符窗口会出现一堆信息</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">2021</span>/<span class="hljs-number">08</span>/<span class="hljs-number">06</span> <span class="hljs-number">12</span>:<span class="hljs-number">08</span>:<span class="hljs-number">56</span> NOTICE: If your browser doesn&#x27;t open automatically go to the following link: http://<span class="hljs-number">127.0.0.1:53682</span>/auth?state=jaVu6mNwoGagI14o7KZ11w<br><span class="hljs-attribute">2021</span>/<span class="hljs-number">08</span>/<span class="hljs-number">06</span> <span class="hljs-number">12</span>:<span class="hljs-number">08</span>:<span class="hljs-number">56</span> NOTICE: Log in and authorize rclone for access<br><span class="hljs-attribute">2021</span>/<span class="hljs-number">08</span>/<span class="hljs-number">06</span> <span class="hljs-number">12</span>:<span class="hljs-number">08</span>:<span class="hljs-number">56</span> NOTICE: Waiting for code...<br><span class="hljs-attribute">2021</span>/<span class="hljs-number">08</span>/<span class="hljs-number">06</span> <span class="hljs-number">12</span>:<span class="hljs-number">09</span>:<span class="hljs-number">14</span> NOTICE: Got code<br><span class="hljs-attribute">Paste</span> the following into your remote machine ---&gt;  &#123;<span class="hljs-string">&quot;access_token&quot;</span>:<span class="hljs-string">&quot;&quot;</span>,*************<span class="hljs-string">&quot;expiry&quot;</span>:<span class="hljs-string">&quot;2021-08-06T13:09:15.4053007+08:00&quot;</span>&#125;<br></code></pre></td></tr></table></figure>
 <p>注意：复制{“access_token”:”xxxxxxxx”}整段内容，保存好，后面要用。（从头复制到尾）</p>
